@@ -1,26 +1,20 @@
-import { ADD_TO_CART, REMOVE_TO_CART } from "./constants";
+import { ADD_TO_CART, EMPTY_CART, REMOVE_FROM_CART } from "./constants";
 
-export const carData = (data = [], action) => {
-  // if (action.type === ADD_TO_CART) {
-  //   console.warn("reducer called", action);
-  //   // some logic
-  //   return action.data;
-  // } else {
-  //   return "no data matched";
-  // }
+export const cartData = (data = [], action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      // add to cart logic
       console.warn("ADD_TO_CART condition", action);
-      return 1 + 1;
+      return [action.data, ...data];
+    case REMOVE_FROM_CART:
+      console.warn("REMOVE_FROM_CART condition", action);
+      data.length = data.length ? data.length - 1 : [];
+      return [...data];
 
-      case REMOVE_TO_CART:
-         // add to cart logic
-      console.warn("REMOVE_TO_CART condition", action);
-      return 1 - 1;
+    case EMPTY_CART:
+      console.warn("EMPTY_CART condition", action);
+      data = [];
+      return [...data];
     default:
-      //no case matched
-      return "no case matched";
-
+      return [];
   }
 };

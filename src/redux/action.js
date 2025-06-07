@@ -1,10 +1,26 @@
-
-import {REMOVE_TO_CART} from "./constants"
+import { ADD_TO_CART, EMPTY_CART, REMOVE_FROM_CART } from "./constants";
 
 export const addToCart = (data) => {
   console.warn("action called", data);
   return {
-    type: REMOVE_TO_CART,
+    type: ADD_TO_CART,
     data,
   };
 };
+
+export const removeFromCart = (data) => {
+  console.warn("action removeFromCart called", data);
+  return {
+    type: REMOVE_FROM_CART,
+    data,
+  };
+};
+
+export const emptyCart = () => {
+  console.warn("emptyCart called");
+  return {
+    type: EMPTY_CART,
+  };
+};
+
+
