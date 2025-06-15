@@ -11,7 +11,10 @@ function Main() {
 
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(productList()), []);
+  // useEffect(() => dispatch(productList()), []);  // cause of error in the cart component of destroy error
+  useEffect(() => {
+  dispatch(productList()); // ← This returns an object
+}, [dispatch]);
 
   return (
     <div className="main-container">

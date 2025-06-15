@@ -43,6 +43,16 @@
   color: #fff;
 }
 
+.logo {
+  float: left;
+  margin: 0;
+  padding: 20px;
+}
+
+.cart {
+  padding: 20px;
+}
+
 /* header style*/
 
 /* Product UI*/
@@ -58,7 +68,42 @@
   box-shadow: 1px 1px black;
 }
 
-/* Product UI*/
+/* end Product UI*/
+
+/*  Cart style*/
+.cart-page-container {
+  display: flex;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.cart-page-container table {
+  flex: 65%;
+  border-collapse: collapse;
+}
+
+.cart-page-container table td {
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.price-details {
+  flex: 35%;
+  margin: 0px 30px;
+}
+
+.price-details .adjust-price{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.price-details .adjust-price span{
+ font-size: 22;
+}
+/* end Cart style*/
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
